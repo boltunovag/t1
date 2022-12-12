@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Праздник в каждый дом">
+    <meta name="description" content="Главная страница компании Праздник в каждый дом.">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.1.js"></script>
+    <script src="js/script.js"></script>
+    <!--ЗАГРУЖАЕМ ШРИФТ ДЛЯ ЗАГОЛОВКА-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+    <link rel="preload" href="/webfonts/RubikMoonrocks-Regular.ttf" as="font">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Burned&family=Rubik+Puddles&display=swap"
+        rel="stylesheet">
+    <title>Праздник в каждый дом</title>
+</head>
+<header>
+    <img src="images/LOGO.svg" alt="Наш логотип" style="margin:2em">
+    <h1>Выбор зоны</h1>
+    <div>
+        <a href="index.html">
+            <div>На главную</div>
+        </a>
+        <a href="search.html">
+            <div>Локации</div>
+        </a>
+        <a href="booking.html">
+            <div>Бронирование</div>
+        </a>
+    </div>
+
+</header>
+<main class="regionS">
+    <article>
+        <span id='NRegion'>
+            <h2>
+                <script>var result = location.search.substring(1);
+                    document.write(receive_kod(result).Regh2);
+                </script>
+            </h2>
+        </span>
+        <img style="display:block; width: 32em; margin: 1em auto;" src="images/plan/9.jpg">
+        <div style="width:80%; margin: 1em auto;text-align: center;">
+            <span class="BoldDocColor">
+                <script>document.write(receive_kod(result).Adrp)</script>
+            </span>
+        </div>
+        <h2>Зоны локации:</h2>
+        <table>
+            <tr>
+                <td><img style="width: 200px;" class="zony" src="images/location/25.jpg"></td>
+                <td>Шатер - 2 шт.</td>
+                <td>Вместимость - до 50 чел</td>
+                <td>5000 р/сутки</td>
+                <td>
+                    <p class="nedostupen">
+                    <div id="kbronirovan" onclick='location.href="booking.html"'>Забронировать</div>
+                    </p>
+                </td>
+
+            </tr>
+            <tr>
+                <td><img style="width: 200px;" .class="zony" src="images/location/12.jpg"></td>
+                <td>Летний домик- 5 шт</td>
+                <td>Вместимость - до 10 чел</td>
+                <td>3000 р/сутки</td>
+                <td>
+                    <p class="nedostupen">Не доступна</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td><img style="width: 200px;" .class="zony" src="images/location/17.jpg"></td>
+                <td>Беседка - 10 шт</td>
+                <td>Вместимость - до 15 чел</td>
+                <td>2000 р/сутки</td>
+                <td>
+                    <p class="nedostupen">Не доступна</p>
+                </td>
+
+            </tr>
+            <tr>
+                <td><img style="width: 200px;" .class="zony" src="images/location/19.jpg"></td>
+                <td>Игровая комната 1 шт</td>
+                <td>Вместимость - до 10 чел</td>
+                <td>300 р/час за 1 посетителя</td>
+                <td>
+                    <p class="nedostupen">Не доступна</p>
+                </td>
+
+            </tr>
+            <td><img style="width: 200px;" .class="zony" src="images/location/23.jpg"></td>
+            <td>Спортивная площадка 1 шт</td>
+            <td>Вместимость - до 15 чел</td>
+            <td>200 р/час за 1 посетителя</td>
+            <td>
+                <div></div>
+                <p class="nedostupen">Не доступна</p>
+            </td>
+
+            </tr>
+        </table>
+    </article>
+</main>
+
+<footer>
+    <article id="fonfooter">
+        <div id="fontelefon">
+            <h2>Телефон: 8 (800) 111-20-20</h2>
+        </div>
+        <nav>
+            <div>
+                <ul>
+                    <a href="http://xxxxxx-m1.wsr.ru">
+                        <li>Home: http://xxxxxx-m1.wsr.ru</li>
+                    </a>
+                    <a href="http://xxxxxx-m1.wsr.ru/login">
+                        <li>Login: http://xxxxxx-m1.wsr.ru/login</li>
+                    </a>
+
+            </div>
+            <div>
+                <ul>
+                    <a href="Home * (http://xxxxxx-m1.wsr.ru)/signup">
+                        <li>Sign up: http://xxxxxx-m1.wsr.ru/signup</li>
+                    </a>
+                    <a href="http://xxxxxx-m1.wsr.ru)/contact">
+                        <li>Contact: http://xxxxxx-m1.wsr.ru)/contact</li>
+                    </a>
+                </ul>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <a href="http://xxxxxx-m1.wsr.ru)/news">
+                        <li>News: http://xxxxxx-m1.wsr.ru)/news</li>
+                    </a>
+                    <a href="http://xxxxxx-m1.wsr.ru/return">
+                        <li>Return * (http://xxxxxx-m1.wsr.ru/return)</li>
+                    </a>
+                    <a href="http://xxxxxx-m1.wsr.ru/feedback">
+                        <li>Feedback * (http://xxxxxx-m1.wsr.ru/feedback)</li>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+
+    </article>
+
+</footer>
+</body>
+
+</html>
