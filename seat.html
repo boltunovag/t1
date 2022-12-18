@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.6.1.js"></script>
     <script src="js/script.js"></script>
+    <script></script>
     <!--ЗАГРУЖАЕМ ШРИФТ ДЛЯ ЗАГОЛОВКА-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,76 +40,162 @@
 
 </header>
 <main class="regionS">
-    <article>
-        <span id='NRegion'>
-            <h2>
-                <script>var result = location.search.substring(1);
-                    document.write(receive_kod(result).Regh2);
-                </script>
-            </h2>
-        </span>
-        <img style="display:block; width: 32em; margin: 1em auto;" src="images/plan/9.jpg">
-        <div style="width:80%; margin: 1em auto;text-align: center;">
-            <span class="BoldDocColor">
-                <script>document.write(receive_kod(result).Adrp)</script>
+    <section class="poisk" id='loc_NaN'><a name="poisk"></a>
+        <article>
+            <h2>Поиск</h2>
+            <div>
+                <div class="sel_cont ">
+                    <div onclick="pr1()" id="myselect">Выберите регион ▼</div>
+                    <div id="myoption1" class="my_opts" onclick="viborreg('Алтайский край')">Алтайский край</div>
+                    <div id="myoption2" class="my_opts" onclick="viborreg('Красноярский край')">Красноярский край
+                    </div>
+                </div>
+                <div class="cal_cont">
+                    <label id="lab_cal" for="calendar"><b>Выберите дату</b></label>
+                    <input id="inp_cal" type="date" name="calendar">
+                </div>
+                <div class="but_cont">
+                    <label id="lab_kol" for="kol"><b>Введите количество гостей</b></label>
+                    <input id="inp_kol" type="number" name="kol" value="0" min="1" max="50" step="1">
+                    <input id="inp_but" type="submit" value="Уточнить" onClick='button_func()' class="button">
+                </div>
+                </form>
+            </div>
+        </article>
+    </section>
+    <section class="tab_zones">
+        <article class="art_tab_zones">
+            <span>
+                <h2 id='NRegion'>Регион не выбран
+
+                </h2>
             </span>
-        </div>
-        <h2>Зоны локации:</h2>
-        <table>
-            <tr>
-                <td><img style="width: 200px;" class="zony" src="images/location/25.jpg"></td>
-                <td>Шатер - 2 шт.</td>
-                <td>Вместимость - до 50 чел</td>
-                <td>5000 р/сутки</td>
-                <td>
-                    <p class="nedostupen">
-                    <div id="kbronirovan" onclick='location.href="booking.html"'>Забронировать</div>
-                    </p>
-                </td>
+            <img id="plan_loc" src="images/plan/null.jpg">
+            <div style="margin-bottom: 1em;">
+                <!--**********Адрес локации: id="adres_loc"************-->
+                <span class="BoldDocColor" id="adres_loc"></span>
+            </div>
+            <!--------Таблица зон Алтайского края-------->
+            <div class="table_zones" id="loc_0">
+                <h2>Зоны локации:</h2>
+                <table>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/25.jpg"></td>
+                        <td>Шатер</td>
+                        <td>Вместимость - до 50 чел</td>
+                        <td>5000 р/сутки</td>
+                        <td>
+                            <div class="nedostupen" id="Al_0" alt="50" onclick='k_broni(0)'>
+                                Не доступен</div>
+                        </td>
 
-            </tr>
-            <tr>
-                <td><img style="width: 200px;" .class="zony" src="images/location/12.jpg"></td>
-                <td>Летний домик- 5 шт</td>
-                <td>Вместимость - до 10 чел</td>
-                <td>3000 р/сутки</td>
-                <td>
-                    <p class="nedostupen">Не доступна</p>
-                </td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/12.jpg"></td>
+                        <td>Летний домик- 5 шт</td>
+                        <td>Вместимость - до 10 чел</td>
+                        <td>3000 р/сутки</td>
+                        <td>
+                            <div class="nedostupen" id="Al_1" alt="50" onclick='k_broni(1)'>
+                                Не доступна</div>
+                        </td>
 
-            </tr>
-            <tr>
-                <td><img style="width: 200px;" .class="zony" src="images/location/17.jpg"></td>
-                <td>Беседка - 10 шт</td>
-                <td>Вместимость - до 15 чел</td>
-                <td>2000 р/сутки</td>
-                <td>
-                    <p class="nedostupen">Не доступна</p>
-                </td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/17.jpg"></td>
+                        <td>Беседка - 3 шт</td>
+                        <td>Вместимость - до 15 чел</td>
+                        <td>2000 р/сутки</td>
+                        <td>
+                            <div class="nedostupen" id="Al_2" alt="45" onclick='k_broni(2)'>
+                                Не доступна</div>
+                        </td>
 
-            </tr>
-            <tr>
-                <td><img style="width: 200px;" .class="zony" src="images/location/19.jpg"></td>
-                <td>Игровая комната 1 шт</td>
-                <td>Вместимость - до 10 чел</td>
-                <td>300 р/час за 1 посетителя</td>
-                <td>
-                    <p class="nedostupen">Не доступна</p>
-                </td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/23.jpg"></td>
+                        <td>Спортивная площадка 1 шт</td>
+                        <td>Вместимость - до 15 чел</td>
+                        <td>200 р/час за 1 посетителя</td>
+                        <td>
+                            <div></div>
+                            <div class="nedostupen" id="Al_3" alt="15" onclick='k_broni(3)'>
+                                Не доступна</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/19.jpg"></td>
+                        <td>Игровая комната 1 шт</td>
+                        <td>Вместимость - до 10 чел</td>
+                        <td>300 р/час за 1 посетителя</td>
+                        <td>
+                            <div class="nedostupen" id="Al_4" alt="10" onclick='k_broni(4)'>
+                                Не доступна</div>
+                        </td>
 
-            </tr>
-            <td><img style="width: 200px;" .class="zony" src="images/location/23.jpg"></td>
-            <td>Спортивная площадка 1 шт</td>
-            <td>Вместимость - до 15 чел</td>
-            <td>200 р/час за 1 посетителя</td>
-            <td>
-                <div></div>
-                <p class="nedostupen">Не доступна</p>
-            </td>
+                    </tr>
 
-            </tr>
-        </table>
-    </article>
+                </table>
+            </div>
+            <!-------Таблица Красноярского края--------->
+            <div class="table_zones" id="loc_1">
+                <h2>Зоны локации:</h2>
+                <table>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/25.jpg"></td>
+                        <td>Шатер - 2 шт.</td>
+                        <td>Вместимость - до 50 чел</td>
+                        <td>5000 р/сутки</td>
+                        <td>
+                            <p class="nedostupen">
+                            <div id="kbronirovan" onclick='location.href="booking.html"'>Забронировать</div>
+                            </p>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/12.jpg"></td>
+                        <td>Летний домик- 5 шт</td>
+                        <td>Вместимость - до 10 чел</td>
+                        <td>3000 р/сутки</td>
+                        <td>
+                            <p class="nedostupen">Не доступна</p>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/17.jpg"></td>
+                        <td>Беседка - 10 шт</td>
+                        <td>Вместимость - до 15 чел</td>
+                        <td>2000 р/сутки</td>
+                        <td>
+                            <p class="nedostupen">Не доступна</p>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td><img style="width: 200px;" class="img_zony" src="images/location/19.jpg"></td>
+                        <td>Игровая комната 1 шт</td>
+                        <td>Вместимость - до 10 чел</td>
+                        <td>300 р/час за 1 посетителя</td>
+                        <td>
+                            <p class="nedostupen">Не доступна</p>
+                        </td>
+
+                    </tr>
+                    <td><img style="width: 200px;" class="img_zony" src="images/location/23.jpg"></td>
+                    <td>Спортивная площадка 1 шт</td>
+                    <td>Вместимость - до 15 чел</td>
+                    <td>200 р/час за 1 посетителя</td>
+                    <td>
+                        <div></div>
+                        <p class="nedostupen">Не доступна</p>
+                    </td>
+                    </tr>
+                </table>
+            </div>
+        </article>
+    </section>
 </main>
 
 <footer>
