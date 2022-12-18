@@ -38,31 +38,32 @@ table {
 .BoldDocColor {
     color: #3669d8;
     font-weight: bold;
-    margin: 5em;
+
 }
 
-button {
+.button {
     width: fit-content;
-    height: 2em;
+    height: 1.5em;
     padding-left: .3em;
     padding-right: .3em;
     padding-bottom: .1em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
-    background: rgb(240, 79, 4);
+    background: linear-gradient(120deg, #ff7300, #ce5d00);
     border-radius: 2em;
     color: #fff;
     font-size: 1.5em;
     text-transform: uppercase;
     margin: 1em;
     cursor: pointer;
-    border: solid rgb(240, 79, 4);
-    transition: background-color .5s, color .5s, border .5s;
+    border: solid rgb(224, 73, 3);
+
 }
 
-button:hover {
+.button:hover {
+    transition-duration: 1s;
     border: solid rgb(240, 79, 4);
-    background-color: #fff;
+    background: #fff;
     color: rgb(240, 79, 4);
 }
 
@@ -250,7 +251,7 @@ header nav a div {
     font-weight: bold;
     text-transform: capitalize;
 
-    transition: background .5s, border .5s;
+    transition: background-color .5s, border .5s;
     border-radius: 5em;
     width: 4.5em;
     background: rgba(251, 255, 4, 0.3);
@@ -261,9 +262,9 @@ header nav a div {
 header nav a div:hover {
 
     transition-duration: 1c;
-    background: transparent;
+    background-color: rgba(151, 151, 255, 0.329);
     text-decoration: none;
-    border: solid;
+    border: solid rgba(151, 151, 255, 0.329);
 
 
 }
@@ -379,7 +380,6 @@ p .fa-solid,
     /*    background: linear-gradient(120deg,#fff,#feffd2);*/
     padding: 0;
     height: fit-content;
-    border-radius: 30px;
     margin: 0;
 }
 
@@ -529,17 +529,9 @@ p .fa-solid,
 
     display: block;
     float: right;
-    font-weight: bold;
-    background: rgb(240, 79, 4);
-    border-radius: 2em;
-    border: rgb(240, 79, 4);
-    color: #fff;
     font-size: 1.5em;
-    text-transform: uppercase;
+    padding-bottom: 5%;
 
-    cursor: pointer;
-    border: solid rgb(240, 79, 4);
-    transition: background-color .5s, color .5s, border .5s;
 }
 
 .but_cont>#inp_but:hover {
@@ -668,6 +660,7 @@ footer {
     width: 100%;
     display: block;
     height: 13em;
+    bottom: 0;
 }
 
 footer>#fonfooter {
@@ -705,30 +698,35 @@ footer #fonfooter nav {
 /*************Страница поиска локации search*************/
 .lokations {
     flex-direction: row;
-    justify-items: space-between;
-    height: 30em;
 }
 
-.locations article {
-    display: block;
-    flex-basis: 40%;
+.lokations>article {
+    flex-basis: 48%;
+    flex-wrap: nowrap;
 
 }
 
 .lokations article:first-child {
+    margin-right: .5em;
 
-    margin-right: 1em;
 }
 
-.lokations article>div {
-    height: 60%;
-    display: inline-block;
+.lokations>article:last-child {
+    margin-right: .5em;
+
+}
+
+.lokations>article>div {
+    display: block;
+    height: 100%;
     text-align: center;
+    width: 100%;
+    overflow: visible;
 
 }
 
 .lokations article>div p {
-    display: inline-block;
+
     text-align: center;
     font-weight: bold;
 }
@@ -736,20 +734,67 @@ footer #fonfooter nav {
 #containerimgloc {
     display: block;
     width: 80%;
+    height: 70%;
+    margin: .5em auto;
+
+}
+
+#containerimgloc>img {
+    display: block;
+    width: 100%;
     height: 80%;
     margin: .5em auto;
-    overflow: hidden;
+    object-fit: cover;
+}
+
+#kzonam {
+
+    margin: 0 auto;
+    font-size: 1em;
 }
 
 /*************Страница выбора зон*******************/
 
-.zony {
+.sec_poisk {
+    flex-direction: column;
+
+}
+
+.art_tab_zones {
+    width: 90em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.art_poisk {
+
     display: block;
-    width: 234px;
+    height: 10em;
+}
+
+#plan_loc {
+    display: block;
+    width: 32em;
+    margin: 1em auto;
+    border-radius: 30px;
+}
+
+.table_zones {
+    display: none;
+}
+
+.img_zony {
+    display: block;
+    width: 5em;
+    height: 6em;
+    object-fit: cover;
+
 }
 
 .nedostupen {
-    color: red
+    color: red;
+    border: red;
+    cursor: default;
 }
 
 table {
@@ -758,12 +803,10 @@ table {
 }
 
 td {
-
     height: 6em;
-    overflow: hidden;
 }
 
-#kbronirovan {
+.dostupen {
     border-radius: 1em;
     color: #2875a7;
     border: solid #2875a7;
@@ -773,6 +816,7 @@ td {
     cursor: pointer;
     height: 1.5em;
     text-align: center;
+    content: 'Забронировать';
 }
 
 /************БРОНИРОВАНИЕ********************/
